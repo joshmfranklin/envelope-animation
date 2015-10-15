@@ -1,0 +1,125 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory);
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+.library-card {
+    font-family: helvetica;
+}
+
+.library-card.envelope {
+    background-color: #F0F0F0 ;
+    border-radius: 3px;
+    box-shadow: 0 0 1px hsla( 0, 0%, 0%, 0.5 );
+    height: 300px;
+    margin: 100px auto 0;
+    padding-top: 50px;
+    position: relative;
+    width: 290px;
+}
+
+.library-card > .front {
+    background-color: #F0F0F0;
+    border-radius: 2px 2px 3px 3px;
+    box-shadow: 0 -2px 3px hsla( 0, 0%, 0%, 0.1 );
+    cursor: pointer;
+    height: 300px;
+    margin-left: -10px;
+    position: relative;
+    width: 310px;
+    z-index: 1;
+}
+
+.library-card > .card {
+    
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5 );
+    height: 282px;
+    margin-left: -5px;
+    position: absolute;
+    top: -60px;
+    width: 300px;
+    overflow: auto;
+
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotate( 1deg );
+}
+
+.envelope.card-out > .card {
+    box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5 );
+    -webkit-animation: card-pull 1s 1;
+    -webkit-transform: rotate( 0deg );
+    z-index: 2;
+    height: 500px;
+}
+
+@-webkit-keyframes card-pull {
+    
+        0%   {
+            box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5 );
+            top: -60px;
+            -webkit-transform: rotate( 1deg );
+            z-index: 0;
+            height: 282px;
+        }
+
+        50% {
+            box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5 );
+            top: -400px;
+            -webkit-transform: rotate( -1deg );
+            z-index: 0;
+            height: 300px;
+        }
+
+        100% {
+            box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5 );
+            top: -60px;
+            -webkit-transform: rotate(  0deg );
+            z-index: 2;
+            height: 500px;
+        }
+}
+
+@-webkit-keyframes card-stuff {
+        0%   {
+            box-shadow: 0 0 0.6em hsla( 0, 0%, 0%, 0.5 );
+            top: -60px;
+            -webkit-transform: rotate( 0deg );
+            z-index: 2;
+            height: 500px;
+        }
+
+        50% {
+            box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5 );
+            top: -400px;
+            -webkit-transform: rotateZ( -1deg );
+            z-index: 0;
+            height: 300px;
+        }
+
+        100% {
+            box-shadow: 0 0 0.2em hsla( 0, 0%, 0%, 0.5 );
+            top: -60px;
+            -webkit-transform: rotate( 1deg );
+            z-index: 0;
+            height: 282px;
+        }
+}
+
+.library-card .stamp {
+    color: hsl( 50, 30%, 20% );
+    font-size: 16px;
+    position: relative;
+    top: 100px;
+    text-align: center;
+    text-transform: uppercase;
+}
